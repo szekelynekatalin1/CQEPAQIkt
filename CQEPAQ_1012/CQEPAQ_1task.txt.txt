@@ -1,0 +1,40 @@
+Új tároló
+https://github.com/new
+Tároló
+Ha a GitHubon létrehozunk egy új tárolót, annak helyén néhány ajánlást látunk, amit elvégezhetünk a helyi gépünkön. Ha nincs még helyben git tároló:
+
+echo "# app01" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/janos01/app01.git
+git push -u origin main
+A janos01 felhasználót feltelezzük, az app01 tároló névvel.
+
+Ha a „git remote add” hatására azt mondja már be van állítva az origin távoli elérés, akkor javítsuk az „add” szót „set-url”-re.
+
+git remote set-url origin https://github.com/janos01/app01.git
+
+
+Létrehozunk egy ágat, aminek nincs előtörténete gh-pages néven:
+
+git checkout --orphan gh-pages
+Töröljük tartalmat:
+
+git rm -rf .
+Töröljük ki a maradék tartalmat, majd hozzuk létre a weblapot:
+
+index.html
+
+valaki.github.io
+git clone https://github.com/valaki/valaki.github.io
+cd valaki.github.io
+echo "Saját weblap" > index.html
+git add --all
+git commit -m "Kezdés"
+git push -u origin main
+
+
+
+
